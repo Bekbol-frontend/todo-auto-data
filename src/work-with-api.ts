@@ -19,6 +19,10 @@ async function fetchLongPosts(): Promise<APIResponseType[]> {
       "https://jsonplaceholder.typicode.com/posts"
     );
 
+    if (!response.data) {
+      throw Error();
+    }
+
     return response.data;
   } catch (error) {
     console.log(error);
